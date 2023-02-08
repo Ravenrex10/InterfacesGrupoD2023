@@ -1,0 +1,6 @@
+Idea del profesor: Un Cine donde podemos comprar entradas, seleccionar butaca, etc
+
+Pagina para hacer musica (incredibox)
+Pagina para hacer musica (splice sounds)
+Servicio de venta de discos de vinilo con preview para escucharlo
+Pagina de peliculas usando IMDb API

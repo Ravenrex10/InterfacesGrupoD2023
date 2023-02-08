@@ -1,0 +1,15 @@
+Nombre: Analog
+
+1. El usuario podrá comprar vinilos (High)
+2. Atributos de cada vinilo: (High)
+	2.1 Precio
+	2.2 Nombre
+	2.3 Grupo/Artista
+	2.4 Foto
+3. El usuario podrá ver información acerca nuestra (Medium-High)
+4. El usuario podrá iniciar sesión (más opcional por el momento) (Low)
+5. El usuario podrá introducir sus datos al comprar un vinilo (High)
+6. El usuario podrá tener una cesta (Medium)
+7. Poder ampliar la foto de los discos
+
+
