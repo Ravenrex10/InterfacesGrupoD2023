@@ -38,3 +38,9 @@ h1{
 	background-color:black;
 	color:white;
 }
+
+.product-grid-item__slide {
+    left: 0;
+    bottom: 0;
+    z-index: 5;
+}
