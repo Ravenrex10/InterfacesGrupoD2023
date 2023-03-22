@@ -1,13 +1,28 @@
-body{
-	background-image:url("images/wallpaper.jpg");
+.carousel-item {
+	height: 600px; /* adjust this as necessary */
 }
-
+.carousel-item img {
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+}
 .navbar{
 	list-style-type: none;
 	background-color: #333;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
+}
+
+.carousel-caption {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	color: #fff;
+	text-align: center;
+	font-size: 2rem;
+	font-weight: bold;
+	text-shadow: 1px 1px 2px #000;
 }
 
 .navbarObject{
