@@ -23,6 +23,8 @@ const vinyls = [
         "title": "Hidratado pero Mesa",
         "price": "20$"
     },
+
+
 ];
 
 const container = document.getElementById("vinyls-container");
@@ -66,6 +68,37 @@ vinyls.forEach((vinyl) => {
     cardDiv.appendChild(cardBodyDiv);
     colDiv.appendChild(cardDiv);
     container.appendChild(colDiv);
+});
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener('input', function() {
+  // coge el término buscado
+  const searchTerm = this.value.toLowerCase();
+
+  // creamos una lista de vinilos donde solo aparezcan los que coinciden su nombre
+  const filteredVinyls = vinyls.filter(vinyl => vinyl.title.toLowerCase().includes(searchTerm));
+
+  const vinylsContainer = document.querySelector('#vinyls-container');
+
+  vinylsContainer.innerHTML = '';
+
+  // html para crear los vinilos
+  filteredVinyls.forEach(vinyl => {
+    const card = `
+      <div class="col">
+        <div class="card bg-dark text-white">
+          <img src="${vinyl.image}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">${vinyl.title}</h5>
+            <p class="card-text">Price: ${vinyl.price}</p>
+            <a href="#" class="btn btn-primary">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    `;
+    vinylsContainer.innerHTML += card;
+  });
 });
 
 // console.log(vinyls);
