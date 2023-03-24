@@ -29,6 +29,9 @@ const vinyls = [
     },
 
 ];
+const URL = new URLSearchParams(window.location.search);
+const search = URL.get('search');
+console.log(search);
 
 let cartItems = sessionStorage.getItem('discos');
 if(cartItems == null) {
@@ -90,6 +93,16 @@ vinyls.forEach((vinyl) => {
 });
 
 const searchInput = document.getElementById("searchInput");
+if(search!=null){
+    /*searchInput.value = search;
+    //searchInput.dispatchEvent(new Event('input'));
+    searchInput.dispatchEvent(new Event('input', { bubbles: true }));*/
+    setTimeout(() => {
+        searchInput.value = search;
+        searchInput.dispatchEvent(new Event('input'));
+      }, 0);
+}
+
 
 searchInput.addEventListener('input', function() {
   // coge el término buscado
@@ -99,7 +112,7 @@ searchInput.addEventListener('input', function() {
   const filteredVinyls = vinyls.filter(vinyl => vinyl.title.toLowerCase().includes(searchTerm));
 
   const vinylsContainer = document.querySelector('#vinyls-container');
-
+    console.log(filteredVinyls);
   vinylsContainer.innerHTML = '';
 
   // html para crear los vinilos

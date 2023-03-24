@@ -3,5 +3,5 @@ const searchButton = document.getElementById("searchButton");
 searchButton.addEventListener("click", search, false);
 
 function search(){
-    window.location.href="shop.html?="+searchInput.value;
+    window.location.href="shop.html?search="+searchInput.value;
 }
