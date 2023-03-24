@@ -80,6 +80,13 @@ vinyls.forEach((vinyl) => {
     cardDiv.appendChild(cardBodyDiv);
     colDiv.appendChild(cardDiv);
     container.appendChild(colDiv);
+
+    addCartButton.addEventListener("click",function() {
+      addCartButton.classList.remove("btn-primary");
+      addCartButton.innerText = "¡Añadido!";
+      addCartButton.classList.add("btn-success");
+    });
+
 });
 
 const searchInput = document.getElementById("searchInput");
@@ -97,21 +104,57 @@ searchInput.addEventListener('input', function() {
 
   // html para crear los vinilos
   filteredVinyls.forEach(vinyl => {
-    const card = `
-      <div class="col">
-        <div class="card bg-dark text-white">
-          <img src="${vinyl.image}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">${vinyl.title}</h5>
-            <p class="card-text">Price: ${vinyl.price}</p>
-            <a href="#" class="btn btn-primary">Add to Cart</a>
-          </div>
-        </div>
-      </div>
-    `;
-    vinylsContainer.innerHTML += card;
+    const colDiv = document.createElement('div');
+    colDiv.classList.add('col');
+
+    const cardDiv = document.createElement('div');
+    cardDiv.classList.add('card');
+    cardDiv.classList.add('bg-dark');
+    cardDiv.classList.add('text-white');
+    cardDiv.setAttribute('id', vinyl.id);
+
+
+    const cardBodyDiv = document.createElement('div');
+    cardBodyDiv.classList.add('card-body');
+
+    const img = document.createElement("img");
+    img.src = vinyl.image;
+    img.classList.add("card-img-top");
+    img.setAttribute("alt", "...");
+
+    const title = document.createElement('h5');
+    title.classList.add('card-title');
+    title.innerText = vinyl.title;
+
+    const price = document.createElement('p');
+    price.classList.add('card-text');
+    price.innerText = vinyl.price;
+
+    const addCartButton = document.createElement('a');
+    addCartButton.setAttribute("href", "#");
+    addCartButton.addEventListener("click", function(){
+        cartItems += vinyl.id+"+";
+    });
+    addCartButton.classList.add('btn');
+    addCartButton.classList.add('btn-primary');
+    addCartButton.innerText = 'Add to Cart';
+
+    cardDiv.appendChild(img);
+    cardBodyDiv.appendChild(title);
+    cardBodyDiv.appendChild(price);
+    cardBodyDiv.appendChild(addCartButton);
+    cardDiv.appendChild(cardBodyDiv);
+    colDiv.appendChild(cardDiv);
+    container.appendChild(colDiv);
+
+    addCartButton.addEventListener("click",function() {
+      addCartButton.classList.remove("btn-primary");
+      addCartButton.innerText = "¡Añadido!";
+      addCartButton.classList.add("btn-success");
+    });    
   });
 });
+
 
 const cartButton = document.getElementById("cart");
 cartButton.addEventListener("click", function(){
