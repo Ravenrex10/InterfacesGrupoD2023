@@ -39,7 +39,7 @@ let vinylsInCart;
 for(let i = 0; i < itemsSplited.length; i++){
 
     vinyls.forEach((vinyl)=>{ if (vinyl.id == itemsSplited[i]){
-        const card = `
+        /*const card = `
                  <div class="col">
                     <div class="card bg-dark text-white">
                       <img src="${vinyl.image}" class="card-img-top" alt="...">
@@ -50,9 +50,53 @@ for(let i = 0; i < itemsSplited.length; i++){
                     </div>
                   </div>
                 `;
-                cartContainer.innerHTML += card;
+                cartContainer.innerHTML += card;*/
+        const newColumn = document.createElement("div");
+        newColumn.classList.add("col");
+
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.classList.add("bg-dark");
+        card.classList.add("text-white");
+
+        const imagen = document.createElement("img");
+        imagen.src=vinyl.image;
+        imagen.classList.add("card-img-top");
+        imagen.alt="...";
+
+        const cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
+
+        const cardTitle = document.createElement("h5");
+        cardTitle.innerText=vinyl.title;
+        cardTitle.classList.add("card-title");
+
+        const cardPrice = document.createElement("p");
+        cardPrice.innerText="Price: "+ vinyl.price;
+        cardPrice.classList.add("card-text");
+
+        const cardButton = document.createElement("button");
+        cardButton.classList.add("btn");
+        cardButton.classList.add("btn-primary");
+        cardButton.innerText = "Remove";
+        cardButton.addEventListener("click", removeItem(), false);
+
+        cartContainer.appendChild(newColumn);
+        newColumn.appendChild(card);
+        card.appendChild(imagen);
+        card.appendChild(cardBody);
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(cardPrice);
+        cardBody.appendChild(cardButton);
+
+
+
+        function removeItem(){
+            //cartContainer.removeChild(newColumn);
+        }
     }
     });
+
 }
 
 // Funcion para borrar todo el carrito
