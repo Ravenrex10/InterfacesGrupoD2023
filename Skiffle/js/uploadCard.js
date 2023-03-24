@@ -31,6 +31,9 @@ const vinyls = [
 ];
 
 let cartItems = sessionStorage.getItem('discos');
+if(cartItems == null) {
+  cartItems = '';
+}
 
 const container = document.getElementById("vinyls-container");
 
