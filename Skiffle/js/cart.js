@@ -91,10 +91,10 @@ for(let i = 0; i < itemsSplited.length; i++){
 
 
         function removeItem(){
-            cartContainer.removeChild(newColumn);
             itemsSplited.splice(i, 1);
             const newItems = itemsSplited.join("+");
             sessionStorage.setItem('discos', newItems);
+            location.reload();
         }
     }
     });
