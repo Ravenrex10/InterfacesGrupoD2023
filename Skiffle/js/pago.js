@@ -36,8 +36,8 @@ submit.addEventListener("click",function(){
     cardDiv.appendChild(cardBodyDiv);
     colDiv.appendChild(cardDiv);
     container.appendChild(colDiv);
-
-
+    
+    sessionStorage.clear("discos");
 });
 
 
