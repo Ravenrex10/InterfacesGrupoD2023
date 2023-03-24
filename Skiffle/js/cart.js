@@ -54,3 +54,11 @@ for(let i = 0; i < itemsSplited.length; i++){
     }
     });
 }
+
+// Funcion para borrar todo el carrito
+const borrarCarrito = document.getElementById("borrarCarrito");
+borrarCarrito.addEventListener("click", function()
+{
+    sessionStorage.clear("discos");
+    location.reload();
+})
