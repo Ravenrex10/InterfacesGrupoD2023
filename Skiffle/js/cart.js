@@ -79,7 +79,7 @@ for(let i = 0; i < itemsSplited.length; i++){
         cardButton.classList.add("btn");
         cardButton.classList.add("btn-primary");
         cardButton.innerText = "Remove";
-        cardButton.addEventListener("click", removeItem(), false);
+        cardButton.addEventListener("click", removeItem, false);
 
         cartContainer.appendChild(newColumn);
         newColumn.appendChild(card);
@@ -90,9 +90,11 @@ for(let i = 0; i < itemsSplited.length; i++){
         cardBody.appendChild(cardButton);
 
 
-
         function removeItem(){
-            //cartContainer.removeChild(newColumn);
+            cartContainer.removeChild(newColumn);
+            itemsSplited.splice(i, 1);
+            const newItems = itemsSplited.join("+");
+            sessionStorage.setItem('discos', newItems);
         }
     }
     });
