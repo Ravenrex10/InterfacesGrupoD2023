@@ -83,7 +83,7 @@ vinyls.forEach((vinyl) => {
 
     addCartButton.addEventListener("click",function() {
       addCartButton.classList.remove("btn-primary");
-      addCartButton.innerText = "¡Añadido!";
+      addCartButton.innerText = "Item added!";
       addCartButton.classList.add("btn-success");
     });
 
@@ -149,7 +149,7 @@ searchInput.addEventListener('input', function() {
 
     addCartButton.addEventListener("click",function() {
       addCartButton.classList.remove("btn-primary");
-      addCartButton.innerText = "¡Añadido!";
+      addCartButton.innerText = "Item added!";
       addCartButton.classList.add("btn-success");
     });    
   });
