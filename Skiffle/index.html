@@ -9,14 +9,6 @@
 	<script src="https://kit.fontawesome.com/fc22dc6d87.js" crossorigin="anonymous"></script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<!-- jQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<!-- Popper.js -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<!-- Bootstrap JS -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -50,40 +42,36 @@
 			<button type="button" id="searchButton" class="btn btn-success">Search</button>
 		</div>
 	</div>
-	<!-- Banner Carousel -->
-	<div id="bannerCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-		<div class="carousel-caption opacity-75">Skiffle</div>
-		<!-- Indicators -->
-		<ol class="carousel-indicators">
-			<li data-target="#bannerCarousel" data-slide-to="0" class="active"></li>
-			<li data-target="#bannerCarousel" data-slide-to="1"></li>
-			<li data-target="#bannerCarousel" data-slide-to="2"></li>
-			<li data-target="#bannerCarousel" data-slide-to="3"></li>
-		</ol>
-
-		<!-- The slideshow -->
-		<div class="carousel-inner">
-			<a class="carousel-item active" href="shop.html">
-				<img src="images/wallpaper.jpg" alt="Vinyl 1">
-			</a>
-			<a class="carousel-item" href="shop.html">
-				<img src="images/1957_skiffle.png" alt="Vinyl 2">
-			</a>
-			<a class="carousel-item" href="shop.html">
-				<img src="images/jazz.webp" alt="Vinyl 3">
-			</a>
-			<a class="carousel-item" href="shop.html">
-				<img src="images/vinyl.jpg" alt="Vinyl 4">
-			</a>
+	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+				aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+				aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+				aria-label="Slide 3"></button>
 		</div>
-
-		<!-- Left and right controls -->
-		<a class="carousel-control-prev" href="#bannerCarousel" data-slide="prev">
-			<span class="carousel-control-prev-icon"></span>
-		</a>
-		<a class="carousel-control-next" href="#bannerCarousel" data-slide="next">
-			<span class="carousel-control-next-icon"></span>
-		</a>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="images/Skiffle.png" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="images/jazz.webp" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="images/about us.png" class="d-block w-100" alt="...">
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+			data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+			data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
 	</div>
 	<br>
 	<div class="container">
