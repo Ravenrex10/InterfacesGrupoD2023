@@ -18,3 +18,8 @@
 	height: 100%;
 	width: 100%;
 }
+
+.searchButtonColor{
+    background.color:color2;
+    color: white;
+}
