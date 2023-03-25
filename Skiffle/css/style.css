@@ -12,7 +12,7 @@
 }
 
 .carousel-item {
-	height: 600px; /* adjust this as necessary */
+	height: 800px; /* adjust this as necessary */
 }
 .carousel-item img {
 	object-fit: cover;
