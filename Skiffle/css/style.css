@@ -30,3 +30,7 @@
 .vinyl:hover {
 	transform: scale(1.01);
 }
+
+.nav-link:hover {
+  cursor: pointer;
+}

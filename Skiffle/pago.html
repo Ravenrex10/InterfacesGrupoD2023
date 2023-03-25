@@ -29,6 +29,14 @@
 							<a class="nav-link" href="about.html">About</a>
 						</li>
 					</ul>
+					<div class="container">
+						<div class="input-group">
+							<input type="text" id="searchInput" class="form-control mr-2" placeholder="Search vinyls" aria-label="Search">
+							<div class="input-group-append mx-2">
+								<button type="button" id="searchButton" class="btn btn-warning">Search</button>
+							</div>
+						</div>
+					</div>
 					<ul class="navbar-nav">
 						<li class="nav-item">
 							<a class="nav-link active" aria-current="page" href="#"><i
@@ -39,28 +47,32 @@
 			</div>
 		</nav>
 		<br>
-			<div class="container">
-				<div class = "container" id = "mensajeComprado"></div>
-		<br>
-		<form id = "formPagar">
-			<label>Name</label> <br>
-			<input id="name" type="text" name="Nombre"> <br>
-
-			<label>Surnames</label> <br>
-			<input id="surname" type="text" name="Apellidos"> <br>
-
-			<label>Address</label><br>
-			<input id = "address" type="text" name="Dirección"> <br>
-
-			<label>Delivery type</label><br>
-			<input type="radio" name="envio" value="tienda">Pick-up at store
-			<input type="radio" name="envio" value="domicilio">Send it to home <br>
-
-			<label>Credit card number</label> <br>
-			<input type="text" name="tarjeta"> <br>
+		<div class="container card bg-dark text-white">
+			<div class = "container" id = "mensajeComprado"></div>
 			<br>
-		</form>
-		<button class="btn btn-outline-primary" id = "submit">Purchase now</button>
+			<form id = "formPagar">
+				<label>Name</label> <br>
+				<input id="name" type="text" name="Nombre"> <br>
+
+				<label>Surnames</label> <br>
+				<input id="surname" type="text" name="Apellidos"> <br>
+
+				<label>Address</label><br>
+				<input id = "address" type="text" name="Dirección"> <br>
+
+				<label>Delivery type</label><br>
+				<input type="radio" name="envio" value="tienda">Pick-up at store
+				<input type="radio" name="envio" value="domicilio">Send it to home <br>
+
+				<label>Credit card number</label> <br>
+				<input id="creditCard" type="text" name="tarjeta"> <br>
+				<br>
+			</form>
+			<div class="col-4">
+				<button class="btn btn-primary btn-sm w-100" id="submit">Purchase now</button>
+			</div>
+			<br>
+		</div>
 
 		<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -68,6 +80,7 @@
 		crossorigin="anonymous"
 		></script>
 		<script src="js/pago.js"></script>
+		<script src="js/home.js"></script>
 	</body>
 </html>
 	
