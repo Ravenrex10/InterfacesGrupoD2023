@@ -73,7 +73,7 @@ vinyls.forEach((vinyl) => {
         cartItems += vinyl.id+"+";
     });
     addCartButton.classList.add('btn');
-    addCartButton.classList.add('btn-primary');
+    addCartButton.classList.add('btn-warning');
     addCartButton.innerText = 'Add to Cart';
 
     cardDiv.appendChild(img);
@@ -85,7 +85,7 @@ vinyls.forEach((vinyl) => {
     container.appendChild(colDiv);
 
     addCartButton.addEventListener("click",function() {
-      addCartButton.classList.remove("btn-primary");
+      addCartButton.classList.remove("btn-warning");
       addCartButton.innerText = "Item added!";
       addCartButton.classList.add("btn-success");
     });
@@ -149,7 +149,7 @@ searchInput.addEventListener('input', function() {
         cartItems += vinyl.id+"+";
     });
     addCartButton.classList.add('btn');
-    addCartButton.classList.add('btn-primary');
+    addCartButton.classList.add('btn-warning');
     addCartButton.innerText = 'Add to Cart';
 
     cardDiv.appendChild(img);
@@ -161,7 +161,7 @@ searchInput.addEventListener('input', function() {
     container.appendChild(colDiv);
 
     addCartButton.addEventListener("click",function() {
-      addCartButton.classList.remove("btn-primary");
+      addCartButton.classList.remove("btn-warning");
       addCartButton.innerText = "Item added!";
       addCartButton.classList.add("btn-success");
     });    

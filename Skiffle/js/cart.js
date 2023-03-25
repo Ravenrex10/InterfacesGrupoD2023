@@ -82,7 +82,7 @@ for(let i = 0; i < itemsSplited.length; i++){
 
         const cardButton = document.createElement("button");
         cardButton.classList.add("btn");
-        cardButton.classList.add("btn-primary");
+        cardButton.classList.add("btn-danger");
         cardButton.innerText = "Remove";
         cardButton.addEventListener("click", removeItem, false);
 
