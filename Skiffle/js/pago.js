@@ -4,8 +4,6 @@ const form = document.getElementById("formPagar");
 
 submit.addEventListener("click",function(){
     let name = document.getElementById("name");
-    let surname = document.getElementById("surname");
-    const mensaje = document.createElement("h5");
     form.remove();
     submit.remove();
 
