@@ -19,7 +19,10 @@
 	width: 100%;
 }
 
-.searchButtonColor{
-    background.color:color2;
-    color: white;
+.img-about {
+	height: 364px;
+	width: auto;
+	margin-left: auto;
+   	margin-right: auto;
+   	display: block;
 }
