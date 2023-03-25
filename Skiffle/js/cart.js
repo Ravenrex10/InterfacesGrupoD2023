@@ -32,7 +32,12 @@ const vinyls = [
 
 const urlParams = new URLSearchParams(window.location.search);
 
-const items = sessionStorage.getItem('discos');
+let items = sessionStorage.getItem('discos');
+
+if (items == null) {
+    items = "";
+}
+
 const cartContainer = document.getElementById("cartContainer");
 const itemsSplited = items.split("+");
 let vinylsInCart;
@@ -101,10 +106,23 @@ for(let i = 0; i < itemsSplited.length; i++){
 
 }
 
+if (items === "") {
+    document.getElementById("payButton").remove();
+    document.getElementById("borrarCarrito").remove();
+    document.getElementById("cartMessage").innerText = "Your cart is empty";
+}
+
 // Funcion para borrar todo el carrito
 const borrarCarrito = document.getElementById("borrarCarrito");
 borrarCarrito.addEventListener("click", function()
 {
-    sessionStorage.clear("discos");
-    location.reload();
-})
+    if (confirm("Are you sure you want to clear the cart?")) {
+        sessionStorage.clear("discos");
+        location.reload();
+    }
+});
+
+
+
+
+
