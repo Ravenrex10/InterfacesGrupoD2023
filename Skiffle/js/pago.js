@@ -22,7 +22,7 @@ submit.addEventListener("click",function(){
 
     const title = document.createElement('h5');
     title.classList.add('card-title');
-    title.innerText = "Gracias por comprar, " + name.value;
+    title.innerText = "¡Gracias por comprar en Skiffle, " + name.value + "! Tu pedido está en camino.";
 
 
     const addCartButton = document.createElement('a');
