@@ -1,73 +1,20 @@
-.root {
+:root {
 	--color1: #dfd785;
 	--color2: #ebc275;
 	--color3: #f39949;
 	--color4: #ff7831;
 	--color5: #ca5a2e;
-	--color6: #963c3c;
-	--color7: #3a2802;
-	--color8: #202215;
-}
-
-.carousel-caption {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	color: #fff;
-	text-align: center;
-	font-size: 2rem;
-	font-weight: bold;
-	text-shadow: 1px 1px 2px #000;
+	--color6: #c75c5c;
+	--color7: #575e63b0;
+	--color8: #25282A;
 }
 
 .carousel-item {
 	height: 800px; /* adjust this as necessary */
 }
+
 .carousel-item img {
 	object-fit: cover;
 	height: 100%;
 	width: 100%;
-}
-
-.navbar{
-	list-style-type: none;
-	background-color: #333;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-}
-
-.navbarObject{
-	float: left;
-}
-
-.navbarObjectRight{
-	float:right;
-}
-
-.navbarButton{
-	display: block;
-	color: white;
-	padding: 14px 16px;
-	text-align: center;
-	text-decoration: none;
-}
-
-.navbarObject:hover{
-	background-color: #888;
-}
-
-.navbarObjectRight:hover{
-	background-color: #888;
-}
-
-h1{
-	background-color:black;
-	color:white;
-}
-
-.product-grid-item__slide {
-    left: 0;
-    bottom: 0;
-    z-index: 5;
 }
