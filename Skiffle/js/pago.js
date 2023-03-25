@@ -4,6 +4,10 @@ const form = document.getElementById("formPagar");
 
 submit.addEventListener("click",function(){
     let name = document.getElementById("name");
+    if(name.value == "")
+    {
+        alert("Name is required.")
+    }
     form.remove();
     submit.remove();
 
