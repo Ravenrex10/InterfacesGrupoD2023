@@ -247,7 +247,6 @@ searchInput.addEventListener('input', function () {
     price.innerText = vinyl.price;
 
     const addCartButton = document.createElement('a');
-    addCartButton.setAttribute("href", "#");
     addCartButton.addEventListener("click", function () {
       cartItems += vinyl.id + "+";
     });
