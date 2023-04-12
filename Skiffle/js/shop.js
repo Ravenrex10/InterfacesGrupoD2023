@@ -277,6 +277,12 @@ searchInput.addEventListener('input', function () {
       addCartButton.classList.add('btn-warning');
       addCartButton.innerText = 'Add to Cart';
 
+      // Añadido al carrito
+      const addedProductButton = document.createElement('a');
+      addedProductButton.innerText = "Item added!";
+      addedProductButton.classList.add("btn");
+      addedProductButton.classList.add("btn-success");
+
       cardDiv.appendChild(img);
       cardBodyDiv.appendChild(title);
       cardBodyDiv.appendChild(price);
@@ -285,10 +291,20 @@ searchInput.addEventListener('input', function () {
       colDiv.appendChild(cardDiv);
       container.appendChild(colDiv);
 
+      // Función para añadir al carrito
       addCartButton.addEventListener("click", function () {
-        addCartButton.classList.remove("btn-warning");
-        addCartButton.innerText = "Item added!";
-        addCartButton.classList.add("btn-success");
+        cardBodyDiv.removeChild(addCartButton);
+        cardBodyDiv.appendChild(addedProductButton);
+        // Cooldown para no añadir varios al spamear
+        setTimeout(function () {
+
+          cardBodyDiv.removeChild(addedProductButton);
+          addCartButton.innerText = 'Add to Cart';
+          cardBodyDiv.appendChild(addCartButton);
+
+
+        }, 2000);
+
       });
     });
   }
