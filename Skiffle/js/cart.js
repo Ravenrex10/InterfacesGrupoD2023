@@ -220,6 +220,8 @@ if (items === "") {
     document.getElementById("borrarCarrito").remove();
     document.getElementById("totalPrice").remove();
     document.getElementById("cartMessage").innerText = "Your cart is empty";
+} else {
+  document.getElementById("returnLink").remove();
 }
 
 // Funcion para borrar todo el carrito
