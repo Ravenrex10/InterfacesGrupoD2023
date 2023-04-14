@@ -145,6 +145,7 @@ if (items == null) {
 const cartContainer = document.getElementById("cartContainer");
 const itemsSplited = items.split("+");
 let vinylsInCart;
+let priceTotal = 0;
 for(let i = 0; i < itemsSplited.length; i++){
 
     vinyls.forEach((vinyl)=>{ if (vinyl.id == itemsSplited[i]){
@@ -198,6 +199,7 @@ for(let i = 0; i < itemsSplited.length; i++){
         cardBody.appendChild(cardPrice);
         cardBody.appendChild(cardButton);
 
+        priceTotal += parseInt(vinyl.price.replace("$",""));
 
         function removeItem(){
             itemsSplited.splice(i, 1);
@@ -210,9 +212,13 @@ for(let i = 0; i < itemsSplited.length; i++){
 
 }
 
+// mostrar el total
+document.getElementById("totalPrice").innerText = "Your total: " + priceTotal + "$";
+
 if (items === "") {
     document.getElementById("payButton").remove();
     document.getElementById("borrarCarrito").remove();
+    document.getElementById("totalPrice").remove();
     document.getElementById("cartMessage").innerText = "Your cart is empty";
 }
 
@@ -225,6 +231,7 @@ borrarCarrito.addEventListener("click", function()
         location.reload();
     }
 });
+
 
 
 
