@@ -221,6 +221,23 @@ vinyls.forEach((vinyl) => {
   addCartButton.addEventListener("click", function () {
     cardBodyDiv.removeChild(addCartButton);
     cardBodyDiv.appendChild(addedProductButton);
+    sessionStorage.setItem('discos', cartItems);
+
+    let items = sessionStorage.getItem('discos');
+
+    if (items == null) {
+      items = "";
+    }
+
+    const itemsSplited = items.split("+");
+
+    const nItems = itemsSplited.length;
+    const itemsContainer = document.getElementById("cart-items");
+    texto = document.createElement("h4");
+    texto.innerHTML = `You have `+ (nItems-1) +" items in your cart";
+    itemsContainer.innerHTML="";
+    itemsContainer.appendChild(texto);
+
     // Cooldown para no añadir varios al spamear
     setTimeout(function () {
 
@@ -323,6 +340,23 @@ searchInput.addEventListener('input', function () {
       addCartButton.addEventListener("click", function () {
         cardBodyDiv.removeChild(addCartButton);
         cardBodyDiv.appendChild(addedProductButton);
+        sessionStorage.setItem('discos', cartItems);
+
+        let items = sessionStorage.getItem('discos');
+
+        if (items == null) {
+          items = "";
+        }
+
+        const itemsSplited = items.split("+");
+
+        const nItems = itemsSplited.length;
+        const itemsContainer = document.getElementById("cart-items");
+        texto = document.createElement("h4");
+        texto.innerHTML = `You have `+ (nItems-1) +" items in your cart";
+        itemsContainer.innerHTML="";
+        itemsContainer.appendChild(texto);
+
         // Cooldown para no añadir varios al spamear
         setTimeout(function () {
 
@@ -346,4 +380,17 @@ cartButton.addEventListener("click", function () {
 });
 // console.log(vinyls);
 
+let items = sessionStorage.getItem('discos');
 
+if (items == null) {
+  items = "";
+}
+
+const itemsSplited = items.split("+");
+
+const nItems = itemsSplited.length;
+const itemsContainer = document.getElementById("cart-items");
+texto = document.createElement("h4");
+texto.innerHTML = `You have `+ (nItems-1) +" items in your cart";
+itemsContainer.innerHTML="";
+itemsContainer.appendChild(texto);
