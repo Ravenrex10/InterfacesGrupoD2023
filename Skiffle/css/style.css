@@ -50,5 +50,14 @@
 
 #cart-items h4 {
 	margin-top: 100px;
-	margin-left: 20px;
+}
+
+.left {
+	width: 99%;
+	float: left;
+}
+
+.right {
+	width: 1%;
+	float: right;
 }
