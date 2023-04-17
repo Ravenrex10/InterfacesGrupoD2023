@@ -236,6 +236,7 @@ for(let i = 0; i < itemsSplited.length; i++){
 
 // mostrar el total
 document.getElementById("totalPrice").innerText = "Your total: " + priceTotal + "$";
+sessionStorage.setItem("priceTotal", priceTotal);
 
 if (items === "") {
     document.getElementById("payButton").remove();

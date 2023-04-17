@@ -160,6 +160,8 @@ if (cartItems == null) {
   cartItems = '';
 }
 
+const popup = document.getElementById("popup");
+
 const container = document.getElementById("vinyls-container");
 
 vinyls.forEach((vinyl) => {
@@ -238,13 +240,14 @@ vinyls.forEach((vinyl) => {
     itemsContainer.innerHTML="";
     itemsContainer.appendChild(texto);
 
+    popup.classList.remove("d-none");
     // Cooldown para no añadir varios al spamear
     setTimeout(function () {
 
       cardBodyDiv.removeChild(addedProductButton);
       addCartButton.innerText = 'Add to Cart';
       cardBodyDiv.appendChild(addCartButton);
-
+      popup.classList.add("d-none");
 
     }, 2000);
 
@@ -394,3 +397,11 @@ texto = document.createElement("h4");
 texto.innerHTML = `You have `+ (nItems-1) +" items in your cart";
 itemsContainer.innerHTML="";
 itemsContainer.appendChild(texto);
+
+function showPopup() {
+  var popup = document.getElementById("popup");
+  popup.classList.remove("d-none"); // Show the popup
+  setTimeout(function() {
+    popup.classList.add("d-none"); // Hide the popup after 2 seconds
+  }, 2000);
+}

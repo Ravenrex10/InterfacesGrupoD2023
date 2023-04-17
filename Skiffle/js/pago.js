@@ -2,6 +2,8 @@ const submit = document.getElementById("submit");
 const container = document.getElementById("mensajeComprado");
 const form = document.getElementById("formPagar");
 
+document.getElementById("priceTotalMessage").innerText = "Your total is $" + sessionStorage.getItem("priceTotal");
+
 submit.addEventListener("click",function(){
     let name = document.getElementById("name");
     let surname = document.getElementById("surname");
@@ -11,7 +13,8 @@ submit.addEventListener("click",function(){
     {
         alert("Information is required.")
     }else{
-        form.remove();
+        if (confirm("Confirm purchase?")) {
+            form.remove();
         submit.remove();
 
         const colDiv = document.createElement('div');
@@ -43,6 +46,7 @@ submit.addEventListener("click",function(){
         container.appendChild(colDiv);
 
         sessionStorage.clear("discos");
+        }
     }
 
 });
