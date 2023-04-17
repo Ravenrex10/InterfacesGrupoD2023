@@ -235,6 +235,7 @@ vinyls.forEach((vinyl) => {
 
 });
 
+// Buscar
 const searchInput = document.getElementById("searchInput");
 if (search != null) {
   /*searchInput.value = search;
@@ -246,13 +247,12 @@ if (search != null) {
   }, 0);
 }
 
-
 searchInput.addEventListener('input', function () {
   // coge el término buscado
   const searchTerm = this.value.toLowerCase();
 
   // creamos una lista de vinilos donde solo aparezcan los que coinciden su nombre
-  const filteredVinyls = vinyls.filter(vinyl => vinyl.title.toLowerCase().includes(searchTerm));
+  const filteredVinyls = vinyls.filter(vinyl => (vinyl.title.toLowerCase().includes(searchTerm) || vinyl.artist.toLowerCase().includes(searchTerm)));
 
   const vinylsContainer = document.querySelector('#vinyls-container');
   console.log(filteredVinyls);
@@ -288,9 +288,13 @@ searchInput.addEventListener('input', function () {
       title.classList.add('card-title');
       title.innerText = vinyl.title;
 
+      const artist = document.createElement('h6');
+      artist.classList.add('card-text');
+      artist.innerText = vinyl.artist;
+
       const price = document.createElement('p');
       price.classList.add('card-text');
-      price.innerText = vinyl.price;
+      price.innerText = "Price: " + vinyl.price;
 
       const addCartButton = document.createElement('a');
       addCartButton.addEventListener("click", function () {
@@ -308,6 +312,7 @@ searchInput.addEventListener('input', function () {
 
       cardDiv.appendChild(img);
       cardBodyDiv.appendChild(title);
+      cardBodyDiv.appendChild(artist);
       cardBodyDiv.appendChild(price);
       cardBodyDiv.appendChild(addCartButton);
       cardDiv.appendChild(cardBodyDiv);
