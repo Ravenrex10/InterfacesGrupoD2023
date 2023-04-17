@@ -34,3 +34,30 @@
 .nav-link:hover {
   cursor: pointer;
 }
+
+#cart-items {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 300px;
+	height: 100%;
+	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+#cart-items h4 {
+	margin-top: 100px;
+}
+
+.left {
+	width: 99%;
+	float: left;
+}
+
+.right {
+	width: 1%;
+	float: right;
+}
