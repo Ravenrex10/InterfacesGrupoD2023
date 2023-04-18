@@ -106,11 +106,25 @@ const vinyls = [
     "price": "15$"
   },
   {
+    "id": 21,
+    "image": "https://i.discogs.com/_1djgr_cmgajmivwJDVN5Y7Zv4HA8wtUAn51vmbujs4/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ2MzU5/Ny0xNjc1ODg2OTE1/LTIxMTQuanBlZw.jpeg",
+    "title": "Wish You Were Here",
+    "artist": "Pink Floyd",
+    "price": "20$"
+  },
+  {
     "id": 16,
     "image": "https://i.discogs.com/YzhtLts7LkthVlFHqcaq5ZNZ59GEwslZA9KCw556CSc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM1NTIz/My0xNDI2MTY2MTc0/LTkwODYuanBlZw.jpeg",
     "title": "Songs in the key of life",
     "artist": "Stevie Wonder",
     "price": "32$"
+  },
+  {
+    "id": 23,
+    "image": "https://i.discogs.com/J1XaVLyS_wZUz_tl6tLmGpKVmIIF6p2_tDdL2GuOi2E/rs:fit/g:sm/q:90/h:225/w:225/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQyNDE3/MzYtMTM1OTQ3NzEz/My01NTg4LmpwZWc.jpeg",
+    "title": "Son Ilusiones",
+    "artist": "Los Chichos",
+    "price": "100$"
   },
   {
     "id": 17,
@@ -126,6 +140,13 @@ const vinyls = [
     "title": "Delta's fury",
     "artist": "Wild Dani",
     "price": "30$"
+  },
+  {
+    "id": 24,
+    "image": "https://i.discogs.com/8POgHFUJSuNX92ueOEjqD974vOE2RgbrMqTWexX6VsI/rs:fit/g:sm/q:90/h:225/w:225/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTcwMzA4/NjItMTQzMjA3MjIz/Ni02NjQyLmpwZWc.jpeg",
+    "title": "Shrek The Musical",
+    "artist": "Jeanine Tesori",
+    "price": "350$"
   },
 
   {
@@ -148,8 +169,14 @@ const vinyls = [
     "title": "Demon Days",
     "artist": "Gorillaz",
     "price": "23$"
+  },
+  {
+    "id": 22,
+    "image": "https://i.discogs.com/zXG-O4nf8IAEJbD76pJcOTP87V9prsHUkyNswLvGQL8/rs:fit/g:sm/q:90/h:304/w:320/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTUyODcy/NDItMTM5ODIyMjM5/OS00MDQyLmpwZWc.jpeg",
+    "title": "Wish You Were Here",
+    "artist": "Badfinger",
+    "price": "10$"
   }
-
 ];
 const URL = new URLSearchParams(window.location.search);
 const search = URL.get('search');
