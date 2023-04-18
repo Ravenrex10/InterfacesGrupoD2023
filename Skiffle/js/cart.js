@@ -151,6 +151,14 @@ const vinyls = [
   }
 ];
 
+
+// Función para volver a la tienda
+const volverButton = document.getElementById("returnLink");
+volverButton.addEventListener("click", function()
+{
+  window.location.href="shop.html"
+})
+
 const urlParams = new URLSearchParams(window.location.search);
 
 let items = sessionStorage.getItem('discos');
@@ -256,6 +264,7 @@ borrarCarrito.addEventListener("click", function()
         location.reload();
     }
 });
+
 
 
 
