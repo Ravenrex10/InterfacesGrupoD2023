@@ -113,6 +113,13 @@ const vinyls = [
     "price": "20$"
   },
   {
+    "id": 28,
+    "title": "Not in my bed",
+    "image": "https://ih1.redbubble.net/image.3780779577.9961/ccp,small,square_product,1000x1000.jpg",
+    "artist": "James Table",
+    "price": "65$"
+  },
+  {
     "id": 16,
     "image": "https://i.discogs.com/YzhtLts7LkthVlFHqcaq5ZNZ59GEwslZA9KCw556CSc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM1NTIz/My0xNDI2MTY2MTc0/LTkwODYuanBlZw.jpeg",
     "title": "Songs in the key of life",
@@ -148,6 +155,13 @@ const vinyls = [
     "artist": "Jeanine Tesori",
     "price": "350$"
   },
+  {
+    "id": 26,
+    "image": "https://i.discogs.com/L_VyYyJq5qz9dKeMRuRSGg3ftbl-sadWu4oaJotdn-M/rs:fit/g:sm/q:90/h:600/w:588/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwNDE2/MTgtMTM5MDY3OTAy/NS0yMzcyLmpwZWc.jpeg",
+    "title": "The Wall",
+    "artist": "Pink Floyd",
+    "price": "30$"
+  },
 
   {
     "id": 18,
@@ -176,7 +190,22 @@ const vinyls = [
     "title": "Wish You Were Here",
     "artist": "Badfinger",
     "price": "10$"
+  },
+  {
+    "id": 25,
+    "image": "https://i.discogs.com/O0Axawoa5MwOD1jcV0tnlGa6PUQJDuQ8WvZILCtd_gM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQzMjk0/MDYtMTQwODQ2NzU4/OC00OTc5LmpwZWc.jpeg",
+    "title": "Favourite Worst Nightmare",
+    "artist": "Arctic Monkeys",
+    "price": "25$"
+  },
+  {
+    "id": 27,
+    "title": "30",
+    "image": "https://i.discogs.com/hdxv-bzKMxY8Yh8OB2OZI59p0ezHJaXjbSB7i3q5-nc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIxMDI4/NDI5LTE2MzczMjIz/NzEtMTk0Ni5qcGVn.jpeg",
+    "artist": "Adele",
+    "price": "50$"
   }
+
 ];
 
 var login = document.getElementById("login");
