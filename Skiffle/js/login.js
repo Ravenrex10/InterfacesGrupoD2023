@@ -2,9 +2,12 @@ var login = document.getElementById("login");
 if(login.innerText == "Login" || login.innerText == "")
 {
   login.innerText = "Login";
+  login.href = "#";
+  
 }
 else {
   login.innerText = sessionStorage.getItem("mail");
+  login.href = "cerrarsesion.html";
 }
 
 document.getElementById("button").addEventListener("click", function (event) {
@@ -33,7 +36,7 @@ document.getElementById("sign-up").addEventListener("click", function () {
   }
   else {
 
-    sessionStorage.setItem('mailSignup', mail.value);
+    sessionStorage.setItem('mail', mail.value);
 
     alert("You now have an account. You are logged in.");
     window.location.href = "index.html";

@@ -6,9 +6,7 @@ var login = document.getElementById("login");
 if(sessionStorage.getItem("mail") != "" && sessionStorage.getItem("mail") != null)
 {
     login.innerText = sessionStorage.getItem("mail");
-    
-    //TODO: Cerrar sesión
-    login.href = "";
+    login.href = "cerrarsesion.html";
 }
 else {
     login.innerText = "Login";

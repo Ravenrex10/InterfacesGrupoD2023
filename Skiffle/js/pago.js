@@ -3,15 +3,15 @@ const container = document.getElementById("mensajeComprado");
 const form = document.getElementById("formPagar");
 
 var login = document.getElementById("login");
-if(sessionStorage.getItem("mail") != "")
+if(sessionStorage.getItem("mail") != "" && sessionStorage.getItem("mail") != null)
 {
     login.innerText = sessionStorage.getItem("mail");
     
-    //TODO: Cerrar sesión
-    login.href = "";
+    login.href = "cerrarsesion.html";
 }
 else {
     login.innerText = "Login";
+    login.href = "login.html";
 }
 
 document.getElementById("priceTotalMessage").innerText = "Your total is $" + sessionStorage.getItem("priceTotal");
