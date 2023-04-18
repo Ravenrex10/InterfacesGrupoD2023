@@ -63,6 +63,17 @@ submit.addEventListener("click",function(){
 
 });
 
+document.getElementById("searchButton").addEventListener("click", search, false);
+document.getElementById("searchInput").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        search();
+    }
+}, false);
+
+function search(){
+    window.location.href="shop.html?search="+searchInput.value;
+}
+
 
 
 

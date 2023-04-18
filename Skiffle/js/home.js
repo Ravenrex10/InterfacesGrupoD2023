@@ -1,6 +1,6 @@
-const searchInput = document.getElementById("searchInput");
-const searchButton = document.getElementById("searchButton");
-const vinyl = document.getElementById("recomendedVinyl"); 
+
+//const vinyl = document.getElementById("recomendedVinyl"); 
+//vinyl.addEventListener("click", recomendedVinyl, false);
 
 var login = document.getElementById("login");
 if(sessionStorage.getItem("mail") != "" && sessionStorage.getItem("mail") != null)
@@ -13,10 +13,8 @@ else {
     login.href = "login.html";
 }
 
-searchButton.addEventListener("click", search, false);
-vinyl.addEventListener("click", recomendedVinyl, false);
-
-searchInput.addEventListener("keydown", function(e) {
+document.getElementById("searchButton").addEventListener("click", search, false);
+document.getElementById("searchInput").addEventListener("keydown", function(e) {
     if (e.key === "Enter") {
         search();
     }

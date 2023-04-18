@@ -41,4 +41,15 @@ document.getElementById("sign-up").addEventListener("click", function () {
     alert("You now have an account. You are logged in.");
     window.location.href = "index.html";
   }
-})
+});
+
+document.getElementById("searchButton").addEventListener("click", search, false);
+document.getElementById("searchInput").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        search();
+    }
+}, false);
+
+function search(){
+    window.location.href="shop.html?search="+searchInput.value;
+}

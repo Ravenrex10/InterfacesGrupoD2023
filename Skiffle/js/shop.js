@@ -467,10 +467,3 @@ texto.innerHTML = `You have `+ (nItems-1) +" items in your cart";
 itemsContainer.innerHTML="";
 itemsContainer.appendChild(texto);
 
-function showPopup() {
-  var popup = document.getElementById("popup");
-  popup.classList.remove("d-none"); // Show the popup
-  setTimeout(function() {
-    popup.classList.add("d-none"); // Hide the popup after 2 seconds
-  }, 2000);
-}
