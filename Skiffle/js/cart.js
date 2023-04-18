@@ -179,6 +179,18 @@ const vinyls = [
   }
 ];
 
+var login = document.getElementById("login");
+if(sessionStorage.getItem("mail") != "")
+{
+    login.innerText = sessionStorage.getItem("mail");
+    
+    //TODO: Cerrar sesión
+    login.href = "";
+}
+else {
+    login.innerText = "Login";
+}
+
 
 // Función para volver a la tienda
 const volverButton = document.getElementById("returnLink");

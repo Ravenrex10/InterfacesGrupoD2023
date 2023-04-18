@@ -2,6 +2,18 @@ const submit = document.getElementById("submit");
 const container = document.getElementById("mensajeComprado");
 const form = document.getElementById("formPagar");
 
+var login = document.getElementById("login");
+if(sessionStorage.getItem("mail") != "")
+{
+    login.innerText = sessionStorage.getItem("mail");
+    
+    //TODO: Cerrar sesión
+    login.href = "";
+}
+else {
+    login.innerText = "Login";
+}
+
 document.getElementById("priceTotalMessage").innerText = "Your total is $" + sessionStorage.getItem("priceTotal");
 
 submit.addEventListener("click",function(){

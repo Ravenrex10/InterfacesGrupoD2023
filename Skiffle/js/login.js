@@ -1,12 +1,41 @@
 var login = document.getElementById("login");
-login.innerText = sessionStorage.getItem("mail");
+if(login.innerText == "Login" || login.innerText == "")
+{
+  login.innerText = "Login";
+}
+else {
+  login.innerText = sessionStorage.getItem("mail");
+}
 
-document.getElementById("button").addEventListener("click", function(event) {
-  
+document.getElementById("button").addEventListener("click", function (event) {
+
   // Obtener los valores del formulario
   var mail = document.getElementById("mail");
-  sessionStorage.setItem('mail', mail.value);
+  var password = document.getElementById("password");
 
-  alert("Logged in");
-  window.location.href="index.html";
+  if (password.value == "") {
+    alert("You need to provide a password")
+  }
+  else {
+    sessionStorage.setItem('mail', mail.value);
+    alert("Logged in");
+    window.location.href = "index.html";
+  }
 });
+
+document.getElementById("sign-up").addEventListener("click", function () {
+  // Obtener los valores del formulario
+  var mail = document.getElementById("mailSignup");
+  var password = document.getElementById("passwordSignup");
+
+  if (password.value == "") {
+    alert("You need to provide a password")
+  }
+  else {
+
+    sessionStorage.setItem('mailSignup', mail.value);
+
+    alert("You now have an account. You are logged in.");
+    window.location.href = "index.html";
+  }
+})

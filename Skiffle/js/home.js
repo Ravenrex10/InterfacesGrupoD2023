@@ -2,6 +2,19 @@ const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchButton");
 const vinyl = document.getElementById("recomendedVinyl"); 
 
+var login = document.getElementById("login");
+if(sessionStorage.getItem("mail") != "" && sessionStorage.getItem("mail") != null)
+{
+    login.innerText = sessionStorage.getItem("mail");
+    
+    //TODO: Cerrar sesión
+    login.href = "";
+}
+else {
+    login.innerText = "Login";
+    login.href = "login.html";
+}
+
 searchButton.addEventListener("click", search, false);
 vinyl.addEventListener("click", recomendedVinyl, false);
 

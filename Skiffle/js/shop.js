@@ -178,6 +178,19 @@ const vinyls = [
     "price": "10$"
   }
 ];
+
+var login = document.getElementById("login");
+if(sessionStorage.getItem("mail") != "")
+{
+    login.innerText = sessionStorage.getItem("mail");
+    
+    //TODO: Cerrar sesión
+    login.href = "";
+}
+else {
+    login.innerText = "Login";
+}
+
 const URL = new URLSearchParams(window.location.search);
 const search = URL.get('search');
 console.log(search);
