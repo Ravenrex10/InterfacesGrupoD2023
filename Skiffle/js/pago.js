@@ -57,7 +57,7 @@ submit.addEventListener("click",function(){
         colDiv.appendChild(cardDiv);
         container.appendChild(colDiv);
 
-        sessionStorage.clear("discos");
+        sessionStorage.removeItem("discos");
         }
     }
 
