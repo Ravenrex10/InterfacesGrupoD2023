@@ -233,6 +233,8 @@ const popup = document.getElementById("popup");
 
 const container = document.getElementById("vinyls-container");
 
+let vinylIndex = 8;
+
 vinyls.forEach((vinyl) => {
   const colDiv = document.createElement('div');
   colDiv.classList.add('col');
@@ -287,6 +289,9 @@ vinyls.forEach((vinyl) => {
   cardDiv.appendChild(cardBodyDiv);
   colDiv.appendChild(cardDiv);
   container.appendChild(colDiv);
+
+  addCartButton.setAttribute("tabindex", vinylIndex);
+  vinylIndex++;
 
   // Función para añadir al carrito
   addCartButton.addEventListener("click", function () {
