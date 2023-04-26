@@ -265,7 +265,7 @@ for(let i = 0; i < itemsSplited.length; i++){
         const imagen = document.createElement("img");
         imagen.src=vinyl.image;
         imagen.classList.add("card-img-top");
-        imagen.alt="...";
+        imagen.alt=vinyl.title;
 
         const cardBody = document.createElement("div");
         cardBody.classList.add("card-body");

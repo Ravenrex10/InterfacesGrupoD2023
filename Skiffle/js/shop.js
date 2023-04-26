@@ -250,7 +250,7 @@ vinyls.forEach((vinyl) => {
   const img = document.createElement("img");
   img.src = vinyl.image;
   img.classList.add("card-img-top");
-  img.setAttribute("alt", "...");
+  img.setAttribute("alt", vinyl.title);
 
   const title = document.createElement('h5');
   title.classList.add('card-title');
