@@ -1,12 +1,12 @@
 var login = document.getElementById("login");
-if(login.innerText == "Login" || login.innerText == "")
+if(sessionStorage.getItem("mail") != "" && sessionStorage.getItem("mail") != null)
 {
-  login.innerText = "Login";
-  login.href = "login.html";
+    login.innerText = sessionStorage.getItem("mail");
+    login.href = "#";
 }
 else {
-  login.innerText = sessionStorage.getItem("mail");
-  login.href = "#";
+    login.innerText = "Login";
+    login.href = "login.html";
 }
 
 document.getElementById("button").addEventListener("click", function (event) {
