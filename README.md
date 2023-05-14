@@ -1,4 +1,5 @@
 # Skiffle
+![Imagen de Skiffle](https://github.com/Ravenrex10/InterfacesGrupoD2023/blob/main/Skiffle/images/Skiffle.png?raw=true)
 ## ¿Qué es Skiffle?
 Skiffle es una **interfaz de usuario** creada usando HTML, CSS, Bootstrap 5.2 y JavaScript que simula una página web de **compra y venta de vinilos**. La aplicación no tiene un backend como tal, exceptuando el propio JavaScript, por lo que los datos se van transmitiendo de un archivo HTML a otro a través de las propias cookies del navegador.
 ## ¿Cómo inicio Skiffle?
