@@ -15,6 +15,7 @@ else {
 }
 
 document.getElementById("priceTotalMessage").innerText = "Your total is $" + sessionStorage.getItem("priceTotal");
+document.getElementById("submit").setAttribute("title", "Your total is $" + sessionStorage.getItem("priceTotal"));
 
 submit.addEventListener("click",function(){
     let name = document.getElementById("name");

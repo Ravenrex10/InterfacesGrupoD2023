@@ -37,20 +37,17 @@
 
 #cart-items {
 	position: fixed;
-	top: 0;
+	top: 11;
 	right: 0;
 	width: 300px;
 	height: 100%;
-	overflow-y: scroll;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
+	text-align: end;
 }
 
-#cart-items h4 {
-	margin-top: 100px;
-}
 
 .left {
 	width: 99%;
@@ -61,3 +58,67 @@
 	width: 1%;
 	float: right;
 }
+
+.wrapper {
+	display: flex;
+	height: 100vh;
+  }
+  
+  .main {
+	flex-grow: 1;
+	padding: 20px;
+	overflow-y: auto;
+  }
+  
+  .side-panel-toggle {
+	width: 40px;
+	height: 40px;
+	flex-shrink: 0;
+	display: grid;
+	place-items: center;
+  
+	color: #000000;
+	background: #ffc108;
+	border: none;
+	border-radius: 5px 0 0 5px;
+	outline: none;
+	cursor: pointer;
+  }
+  
+  .side-panel-toggle:hover {
+	background: #ffc108;
+  }
+  
+  .sp-icon-close {
+	display: none !important;
+  }
+  
+  .side-panel {
+	position: relative;
+	display: none;
+	width: 200px;
+	height: 100vh;
+    overflow: auto;
+	flex-shrink: 0;
+	padding: 20px;
+	color: #9b9d9e;
+	background: #28242c;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+  }
+
+  .side-panel h4 {
+	color:#ffffff;
+  }
+  
+  .side-panel-open .side-panel {
+	display: initial;
+  }
+  
+  .side-panel-open .sp-icon-open {
+	display: none !important;
+  }
+  
+  .side-panel-open .sp-icon-close {
+	display: initial !important;
+  }
+  

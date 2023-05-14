@@ -13,7 +13,7 @@ else {
 document.getElementById("button").addEventListener("click", function (event) {
 
   // Obtener los valores del formulario
-  var mail = document.getElementById("mail");
+  var mail = document.getElementById("name");
   var password = document.getElementById("password");
 
   if (password.value == "") {
@@ -28,8 +28,8 @@ document.getElementById("button").addEventListener("click", function (event) {
 
 document.getElementById("sign-up").addEventListener("click", function () {
   // Obtener los valores del formulario
-  var mail = document.getElementById("mailSignup");
-  var password = document.getElementById("passwordSignup");
+  var mail = document.getElementById("name sign up");
+  var password = document.getElementById("password sign up");
 
   if (password.value == "") {
     alert("You need to provide a password")

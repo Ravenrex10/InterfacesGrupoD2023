@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<title> Cart </title>
@@ -13,7 +13,7 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="index.html"><i class="fa-solid fa-compact-disc"></i></a>
+			<a class="navbar-brand" href="index.html"><span class="sr-only">Home</span><i class="fa-solid fa-compact-disc"></i></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
 				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -29,7 +29,7 @@
 				</ul>
 				<div class="container">
 					<div class="input-group">
-						<input type="text" id="searchInput" class="form-control mr-2" placeholder="Search vinyls" aria-label="Search">
+						<input title="search vinyls" type="text" id="searchInput" class="form-control mr-2" placeholder="Search vinyls" aria-label="Search">
 						<div class="input-group-append mx-2">
 							<button type="button" id="searchButton" class="btn btn-warning">Search</button>
 						</div>
@@ -40,7 +40,7 @@
 						<a class="nav-link" href="login.html" id="login">Login</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#"><i
+						<a class="nav-link active" aria-current="page" href="#"><span class="sr-only">Cart</span><i
 								class="fa-sharp fa-solid fa-cart-shopping"></i></a>
 					</li>
 				</ul>
@@ -49,7 +49,7 @@
 	</nav>
 	<br>
 	<div class="container">
-		<h5 id="cartMessage">You are buying the following vinyls:</h5>
+		<h1 id="cartMessage">You are buying the following vinyls:</h1>
 		<button class="btn btn-outline-warning float-none ms-3" id="returnLink" >Return to shop</button>
 		<br>
 		<div id="cartContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
@@ -57,10 +57,10 @@
 		<br>
 		<h5 id="totalPrice">Your total: 0$</h5>
 		<a href="pago.html">
+			<span class="sr-only">Purchase</span>
 			<button class="btn btn-primary float-start" id="payButton">Purchase</button>
 		</a>
-		<button
-				class="btn btn-danger float-none ms-3" id="borrarCarrito">Delete cart</button>
+		<button class="btn btn-danger float-none ms-3" id="borrarCarrito">Delete cart</button>
 				
 	</div>
 	<br/>

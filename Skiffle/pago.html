@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<title>Title</title>
+		<title>Payment and delivery</title>
 		<link rel="stylesheet" href="css/style.css">
 		<script src="https://kit.fontawesome.com/fc22dc6d87.js" crossorigin="anonymous"></script>
 		<link
@@ -16,7 +16,7 @@
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="index.html"><i class="fa-solid fa-compact-disc"></i></a>
+				<a class="navbar-brand" href="index.html" title="Home"><span class="sr-only">Home</span><i class="fa-solid fa-compact-disc" title="Home"></i></a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
 					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -43,8 +43,8 @@
 							<a class="nav-link" href="login.html" id="login">Login</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#"><i
-									class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+							<a class="nav-link active" aria-current="page" href="#" title="Cart"><span class="sr-only">Cart</span><i
+									class="fa-sharp fa-solid fa-cart-shopping" title="Cart"></i></a>
 						</li>
 					</ul>
 				</div>
@@ -52,24 +52,35 @@
 		</nav>
 		<br>
 		<div class="container card bg-dark text-white">
+			<h1>Payment and delivery</h1>
 			<div class = "container" id = "mensajeComprado"></div>
 			<br>
 			<form id = "formPagar">
-				<label>Name</label> <br>
-				<input id="name" type="text" name="Nombre"> <br>
+				<fieldset>
+					<legend>Customer information</legend>
+					<label for="Name" class="me-4">Name</label> <br>
+					<input id="name" type="text" name="Nombre" class="me-4" title="Name"> <br>
 
-				<label>Surnames</label> <br>
-				<input id="surname" type="text" name="Apellidos"> <br>
+					<label for="Surnames" class="me-4">Surnames</label> <br>
+					<input id="surname" type="text" name="Apellidos" class="me-4" title="Surnames"> <br>
+				</fieldset>
+				
+				<fieldset>
+					<legend>Delivery information</legend>
+					<label for="Address" class="ml-4">Address</label><br>
+					<input id = "address" type="text" name="Dirección" class="ml-4" title="Address"> <br>
 
-				<label>Address</label><br>
-				<input id = "address" type="text" name="Dirección"> <br>
-
-				<label>Delivery type</label><br>
-				<input type="radio" name="envio" value="tienda">Pick-up at store
-				<input type="radio" name="envio" value="domicilio">Send it to home <br>
-
-				<label>Credit card number</label> <br>
-				<input id="creditCard" type="text" name="tarjeta"> <br>
+					<label for="envio" class="ml-4">Delivery type</label><br>
+					<input type="radio" name="envio" value="tienda" class="ml-4" title="Pick up at store">Pick-up at store <br>
+					<input type="radio" name="envio" value="domicilio" class="ml-4" title="Send it to home">Send it to home <br>
+				</fieldset>
+				
+				<fieldset>
+					<legend>Payment information</legend>
+					<label for="Credit card number" class="ml-4">Credit card number</label> <br>
+					<input id="creditCard" type="text" name="tarjeta" class="ml-4" title="Credit card number"> <br>
+				</fieldset>
+				
 				<br>
 				<h5 id="priceTotalMessage"></h5>
 			</form>

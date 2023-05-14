@@ -208,21 +208,25 @@ const vinyls = [
 
 ];
 
+document.querySelector(".side-panel-toggle").addEventListener("click", () => {
+  document.querySelector(".wrapper").classList.toggle("side-panel-open");
+});
+
+
 var login = document.getElementById("login");
-if(sessionStorage.getItem("mail") != "" && sessionStorage.getItem("mail") != null)
-{
-    login.innerText = sessionStorage.getItem("mail");
-    
-    login.href = "cerrarsesion.html";
+if (sessionStorage.getItem("mail") != "" && sessionStorage.getItem("mail") != null) {
+  login.innerText = sessionStorage.getItem("mail");
+
+  login.href = "cerrarsesion.html";
 }
 else {
-    login.innerText = "Login";
-    login.href = "login.html";
+  login.innerText = "Login";
+  login.href = "login.html";
 }
 
 const URL = new URLSearchParams(window.location.search);
 const search = URL.get('search');
-console.log(search);
+//console.log(search);
 
 let cartItems = sessionStorage.getItem('discos');
 if (cartItems == null) {
@@ -233,9 +237,10 @@ const popup = document.getElementById("popup");
 
 const container = document.getElementById("vinyls-container");
 
-let vinylIndex = 8;
+
 
 vinyls.forEach((vinyl) => {
+  let vinylIndex = 8;
   const colDiv = document.createElement('div');
   colDiv.classList.add('col');
 
@@ -252,7 +257,7 @@ vinyls.forEach((vinyl) => {
   const img = document.createElement("img");
   img.src = vinyl.image;
   img.classList.add("card-img-top");
-  img.setAttribute("alt", vinyl.title);
+  img.setAttribute("alt", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price);
 
   const title = document.createElement('h5');
   title.classList.add('card-title');
@@ -274,6 +279,11 @@ vinyls.forEach((vinyl) => {
   addCartButton.classList.add('btn');
   addCartButton.classList.add('btn-warning');
   addCartButton.innerText = 'Add to Cart';
+  addCartButton.setAttribute("title", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price);
+
+  const span = document.createElement('span');
+  span.classList.add("sr-only");
+  span.innerText = "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price;
 
   // Añadido al carrito
   const addedProductButton = document.createElement('a');
@@ -285,6 +295,7 @@ vinyls.forEach((vinyl) => {
   cardBodyDiv.appendChild(title);
   cardBodyDiv.appendChild(artist);
   cardBodyDiv.appendChild(price);
+  addCartButton.appendChild(span);
   cardBodyDiv.appendChild(addCartButton);
   cardDiv.appendChild(cardBodyDiv);
   colDiv.appendChild(cardDiv);
@@ -308,11 +319,12 @@ vinyls.forEach((vinyl) => {
     const itemsSplited = items.split("+");
 
     const nItems = itemsSplited.length;
-    const itemsContainer = document.getElementById("cart-items");
-    texto = document.createElement("h4");
-    texto.innerHTML = `You have `+ (nItems-1) +" items in your cart";
-    itemsContainer.innerHTML="";
-    itemsContainer.appendChild(texto);
+    /*const itemsContainer = document.getElementById("cart-items");
+    texto = document.createElement("p");
+    texto.innerHTML = `You have ` + (nItems - 1) + " items in your cart";
+    itemsContainer.innerHTML = "";
+    itemsContainer.appendChild(texto);*/
+    actualizarCarrito();
 
     popup.classList.remove("d-none");
     // Cooldown para no añadir varios al spamear
@@ -329,6 +341,7 @@ vinyls.forEach((vinyl) => {
 
 });
 
+
 // Buscar
 const searchInput = document.getElementById("searchInput");
 if (search != null) {
@@ -342,6 +355,7 @@ if (search != null) {
 }
 
 searchInput.addEventListener('input', function () {
+  let vinylIndex = 8;
   // coge el término buscado
   const searchTerm = this.value.toLowerCase();
 
@@ -349,7 +363,7 @@ searchInput.addEventListener('input', function () {
   const filteredVinyls = vinyls.filter(vinyl => (vinyl.title.toLowerCase().includes(searchTerm) || vinyl.artist.toLowerCase().includes(searchTerm)));
 
   const vinylsContainer = document.querySelector('#vinyls-container');
-  console.log(filteredVinyls);
+  //console.log(filteredVinyls);
   vinylsContainer.innerHTML = '';
   if (filteredVinyls.length == 0) {
     const h2 = document.createElement('h2');
@@ -376,7 +390,7 @@ searchInput.addEventListener('input', function () {
       const img = document.createElement("img");
       img.src = vinyl.image;
       img.classList.add("card-img-top");
-      img.setAttribute("alt", "...");
+      img.setAttribute("alt", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price);
 
       const title = document.createElement('h5');
       title.classList.add('card-title');
@@ -397,6 +411,17 @@ searchInput.addEventListener('input', function () {
       addCartButton.classList.add('btn');
       addCartButton.classList.add('btn-warning');
       addCartButton.innerText = 'Add to Cart';
+      addCartButton.setAttribute("title", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price);
+      addCartButton.setAttribute("tabindex", vinylIndex);
+      vinylIndex++;
+
+      const span = document.createElement('span');
+      span.classList.add("sr-only");
+      span.innerText = "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price;
+
+
+
+
 
       // Añadido al carrito
       const addedProductButton = document.createElement('a');
@@ -408,6 +433,7 @@ searchInput.addEventListener('input', function () {
       cardBodyDiv.appendChild(title);
       cardBodyDiv.appendChild(artist);
       cardBodyDiv.appendChild(price);
+      addCartButton.appendChild(span);
       cardBodyDiv.appendChild(addCartButton);
       cardDiv.appendChild(cardBodyDiv);
       colDiv.appendChild(cardDiv);
@@ -428,11 +454,12 @@ searchInput.addEventListener('input', function () {
         const itemsSplited = items.split("+");
 
         const nItems = itemsSplited.length;
-        const itemsContainer = document.getElementById("cart-items");
+        const itemsContainer = document.getElementById("cartContainer");
         texto = document.createElement("h4");
-        texto.innerHTML = `You have `+ (nItems-1) +" items in your cart";
-        itemsContainer.innerHTML="";
+        texto.innerHTML = `You have ` + (nItems - 1) + " items in your cart";
+        itemsContainer.innerHTML = "";
         itemsContainer.appendChild(texto);
+        actualizarCarrito();
 
         // Cooldown para no añadir varios al spamear
         setTimeout(function () {
@@ -448,6 +475,71 @@ searchInput.addEventListener('input', function () {
     });
   }
 });
+actualizarCarrito();
+function actualizarCarrito() {
+  const cartContainer = document.getElementById("cartContainer");
+  cartContainer.innerHTML = '';
+  let priceTotal = 0;
+  let itemss = sessionStorage.getItem('discos');
+  if (itemss != null) {
+    const itemsSplited = itemss.split("+");
+    for (let i = 0; i < itemsSplited.length; i++) {
+
+      vinyls.forEach((vinyl) => {
+        if (vinyl.id == itemsSplited[i]) {
+          /*const card = `
+                   <div class="col">
+                      <div class="card bg-dark text-white">
+                        <img src="${vinyl.image}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">${vinyl.title}</h5>
+                          <p class="card-text">Price: ${vinyl.price}</p>
+                        </div>
+                      </div>
+                    </div>
+                  `;
+                  cartContainer.innerHTML += card;*/
+          const newColumn = document.createElement("div");
+          newColumn.classList.add("col");
+
+          const card = document.createElement("div");
+          card.classList.add("card");
+          card.classList.add("bg-dark");
+          card.classList.add("text-white");
+
+          const imagen = document.createElement("img");
+          imagen.src = vinyl.image;
+          imagen.classList.add("card-img-top");
+          imagen.alt = vinyl.title;
+
+          const cardBody = document.createElement("div");
+          cardBody.classList.add("card-body");
+
+          const cardTitle = document.createElement("h5");
+          cardTitle.innerText = vinyl.title;
+          cardTitle.classList.add("card-title");
+
+          const artist = document.createElement('h6');
+          artist.classList.add('card-text');
+          artist.innerText = vinyl.artist;
+
+          const cardPrice = document.createElement("p");
+          cardPrice.innerText = "Price: " + vinyl.price;
+          cardPrice.classList.add("card-text");
+
+          cartContainer.appendChild(newColumn);
+          newColumn.appendChild(card);
+          card.appendChild(imagen);
+          card.appendChild(cardBody);
+          cardBody.appendChild(cardTitle);
+          cardBody.appendChild(artist);
+          cardBody.appendChild(cardPrice);
+        }
+      }
+      );
+    }
+  }
+}
 
 
 const cartButton = document.getElementById("cart");
@@ -463,12 +555,11 @@ if (items == null) {
   items = "";
 }
 
-const itemsSplited = items.split("+");
-
+/*
 const nItems = itemsSplited.length;
 const itemsContainer = document.getElementById("cart-items");
 texto = document.createElement("h4");
-texto.innerHTML = `You have `+ (nItems-1) +" items in your cart";
-itemsContainer.innerHTML="";
+texto.innerHTML = `You have ` + (nItems - 1) + " items in your cart";
+itemsContainer.innerHTML = "";
 itemsContainer.appendChild(texto);
-
+*/
